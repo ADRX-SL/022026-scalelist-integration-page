@@ -127,7 +127,7 @@ const Hero = () => {
             <RatingBadge rating="4.9 / 5" platform="Capterra" icon="capterra" />
           </div>
 
-          <div className="grid items-start gap-12 lg:grid-cols-2">
+          <div className="grid items-start gap-16 lg:grid-cols-[1fr,auto]">
             {/* Left content */}
             <div className="pt-4">
               <h1 className="mb-6 text-[clamp(2.5rem,5vw,3.75rem)] font-extrabold leading-[1.1] tracking-tight text-foreground">
