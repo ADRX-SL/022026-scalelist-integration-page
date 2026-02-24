@@ -1,14 +1,6 @@
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-
-type Tab = "mobiles" | "emails";
-
-const MobileFinderIcon = () => (
-  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary">
-    <Phone className="h-8 w-8 text-primary-foreground" />
-  </div>
-);
+import logo from "@/assets/logo-transparent-bg.png";
 
 const TrustBar = () => {
   const logos = ["ElevenLabs", "CLOUDERA", "stripe", "J.P.Morgan", "ORACLE NetSuite", "BD"];
@@ -27,102 +19,94 @@ const TrustBar = () => {
   );
 };
 
-const Hero = () => {
-  const [activeTab, setActiveTab] = useState<Tab>("mobiles");
+const integrationLogos = [
+  { name: "salesforce", label: "salesforce", bg: "bg-sky-400", text: "text-white", angle: -60 },
+  { name: "clay", label: "clay 🌈", bg: "bg-white", text: "text-foreground", angle: -150 },
+  { name: "zapier", label: "zapier", bg: "bg-orange-500", text: "text-white", angle: 0 },
+  { name: "hubspot", label: "⚙", bg: "bg-white", text: "text-orange-500", angle: -210 },
+  { name: "mixpanel", label: "●", bg: "bg-white", text: "text-violet-600", angle: -30 },
+  { name: "csv", label: "CSV", bg: "bg-white", text: "text-green-600", angle: -270 },
+];
 
+const OrbitDiagram = () => {
+  return (
+    <div className="relative h-[500px] w-full max-w-[550px]">
+      {/* Dashed orbit rings */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="h-[460px] w-[460px] rounded-full border border-dashed border-primary/20" />
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="h-[320px] w-[320px] rounded-full border border-dashed border-primary/20" />
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="h-[180px] w-[180px] rounded-full border border-dashed border-primary/20" />
+      </div>
+
+      {/* Center Scalelist logo */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-primary shadow-lg">
+          <img src={logo} alt="Scalelist" className="h-16 w-16 brightness-0 invert" />
+        </div>
+      </div>
+
+      {/* Orbiting logos */}
+      {integrationLogos.map((item) => {
+        const radius = 210;
+        const rad = (item.angle * Math.PI) / 180;
+        const x = Math.cos(rad) * radius;
+        const y = Math.sin(rad) * radius;
+        return (
+          <div
+            key={item.name}
+            className="absolute left-1/2 top-1/2"
+            style={{
+              transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+            }}
+          >
+            <div
+              className={`flex h-14 w-14 items-center justify-center rounded-full ${item.bg} ${item.text} border border-border shadow-md text-xs font-bold`}
+            >
+              {item.label}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const Hero = () => {
   return (
     <>
       <section className="relative overflow-hidden pb-16 pt-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          {/* Icon + Title */}
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <MobileFinderIcon />
-            <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
-              Find mobile number
-            </h1>
-          </div>
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            {/* Left side - Text */}
+            <div>
+              <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
+                Integrations
+              </span>
+              <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-foreground">
+                Connect your{" "}
+                <span className="text-primary">Sales stack</span>
+              </h1>
+              <p className="mb-8 max-w-md text-lg text-muted-foreground">
+                Push enriched contacts straight into your CRM and outreach tools. Start sequences instantly.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button size="lg" className="gap-2 rounded-full px-8 text-base">
+                  Try for free <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-base">
+                  Talk to sales
+                </Button>
+              </div>
+            </div>
 
-          {/* Subtitle */}
-          <p className="mx-auto mb-10 max-w-lg text-lg text-muted-foreground">
-            Talk directly to decision makers using mobile numbers<br />
-            that actually get answered.
-          </p>
-
-          {/* Tabs */}
-          <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => setActiveTab("mobiles")}
-              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
-                activeTab === "mobiles"
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border bg-white text-foreground hover:bg-muted"
-              }`}
-            >
-              <MapPin className="h-4 w-4" />
-              Find mobiles by names
-            </button>
-            <span className="text-sm text-muted-foreground">OR</span>
-            <button
-              onClick={() => setActiveTab("emails")}
-              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
-                activeTab === "emails"
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border bg-white text-foreground hover:bg-muted"
-              }`}
-            >
-              <Mail className="h-4 w-4" />
-              Find emails addresses
-              <ArrowRight className="h-3 w-3" />
-            </button>
-          </div>
-
-          {/* Search Form */}
-          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
-            {activeTab === "mobiles" ? (
-              <>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <span className="text-muted-foreground font-medium">@</span>
-                  <input
-                    type="text"
-                    placeholder="company.com"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <Button size="lg" className="rounded-lg px-8 text-base">
-                    Find mobile number
-                  </Button>
-                </div>
-                <p className="mt-3 text-left text-sm text-muted-foreground">
-                  Enter a name and company domain to find the correct email.
-                </p>
-              </>
-            ) : (
-              <>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <span className="text-muted-foreground font-medium">@</span>
-                  <input
-                    type="text"
-                    placeholder="company.com"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <Button size="lg" className="rounded-lg px-8 text-base">
-                    Find email
-                  </Button>
-                </div>
-                <p className="mt-3 text-left text-sm text-muted-foreground">
-                  Enter a name and company domain to find the correct email.
-                </p>
-              </>
-            )}
+            {/* Right side - Orbit diagram */}
+            <div className="flex justify-center">
+              <OrbitDiagram />
+            </div>
           </div>
         </div>
       </section>
