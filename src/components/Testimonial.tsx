@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import marijaImg from "@/assets/marija-velkovica.jpg";
+import andreasImg from "@/assets/andreas-martis.jpg";
 
 const Testimonial = () => {
   return (
@@ -9,20 +9,20 @@ const Testimonial = () => {
           <div>
             <Quote className="mb-4 h-10 w-10 text-primary" />
             <p className="mb-6 text-muted-foreground">
-              "Scalelist is an absolutely incredible tool. It is very user-friendly, provides a high level of precision for the data obtained, and offers amazing customer support. The Scalelist team are open to feedback and strive to make the tool better every day. A huge thank you to Arnaud and his colleagues for making Scalelist possible."
+              "Absolutely amazing piece of software. Did multiple comparisons for similar software and this one came out on top by a long shot. The plug in was so easy to install, the end to end process of setting up a list and extracting was so smooth. Could not recommend this enough to anyone looking. Will be upgrading to an even bigger subscription soon!!"
             </p>
             <div>
-              <p className="font-semibold text-foreground">Marija Velkovica</p>
+              <p className="font-semibold text-foreground">Andreas Martis</p>
               <p className="text-sm text-muted-foreground">
-                Data Research Specialist
+                Owner
               </p>
             </div>
           </div>
           <div className="flex items-center justify-center">
             <div className="aspect-square w-64 overflow-hidden rounded-2xl">
               <img
-                src={marijaImg}
-                alt="Marija Velkovica"
+                src={andreasImg}
+                alt="Andreas Martis"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
