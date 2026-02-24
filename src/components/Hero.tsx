@@ -2,22 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-transparent-bg.png";
 
-const TrustBar = () => {
-  const logos = ["ElevenLabs", "CLOUDERA", "stripe", "J.P.Morgan", "ORACLE NetSuite", "BD"];
-  return (
-    <div className="border-y border-border bg-white py-8">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
-          {logos.map((logo) => (
-            <span key={logo} className="text-lg font-semibold tracking-wide text-muted-foreground/60">
-              {logo}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const integrationLogos = [
   { name: "salesforce", label: "salesforce", bg: "bg-sky-400", text: "text-white", angle: -60 },
@@ -110,7 +94,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <TrustBar />
     </>
   );
 };
