@@ -8,8 +8,8 @@ const FooterCTA = () => {
       <div className="mx-auto max-w-6xl px-6">
         <div className="rounded-2xl bg-card p-12 text-center">
           <img src={logo} alt="Logo" className="mx-auto mb-6 h-14 w-14" />
-          <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-foreground">
-            Unlock B2B emails & mobile numbers for free
+          <h2 className="mb-8 text-5xl font-extrabold tracking-tight text-foreground">
+            Unlock B2B emails &amp;<br />mobile numbers for free
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button size="lg" className="rounded-full px-8 text-base">
