@@ -97,6 +97,15 @@ const GoogleSheetsIcon = () => (
   </svg>
 );
 
+const ClayIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+    <text x="4" y="28" fontSize="22" fontWeight="bold" fill="hsl(0, 0%, 15%)">clay</text>
+    <rect x="32" y="10" width="6" height="12" rx="3" fill="hsl(340, 80%, 55%)" />
+    <rect x="30" y="14" width="4" height="8" rx="2" fill="hsl(40, 90%, 55%)" />
+    <rect x="34" y="14" width="4" height="8" rx="2" fill="hsl(200, 80%, 55%)" />
+  </svg>
+);
+
 const integrationSections = [
   {
     title: "Automation & No-code",
@@ -121,6 +130,13 @@ const integrationSections = [
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Use n8n to connect Scalelist and set up outreach automation. It's the most popular workflow automation platform.",
+      },
+      {
+        icon: <ClayIcon />,
+        name: "Clay",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Automate data enrichment in Clay and build highly targeted, dynamic lead lists.",
       },
     ],
   },
@@ -188,11 +204,15 @@ const integrationSections = [
 const IntegrationCard = ({ card }: { card: IntegrationCard }) => (
   <div className="rounded-xl border border-border bg-white p-6 flex flex-col gap-3">
     <div>{card.icon}</div>
+    <hr className="border-border" />
     <div className="flex items-center gap-2">
       <span className="text-base font-semibold text-foreground">{card.name}</span>
       <BadgeLabel type={card.badgeVariant} label={card.badge} />
     </div>
-    <p className="text-sm text-muted-foreground leading-relaxed">{card.description}</p>
+    <p className="text-sm text-muted-foreground leading-relaxed flex-1">{card.description}</p>
+    <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:underline mt-2">
+      Connect now <span aria-hidden="true">›</span>
+    </a>
   </div>
 );
 
