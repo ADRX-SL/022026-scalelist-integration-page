@@ -19,7 +19,7 @@ const Testimonial = () => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="h-64 w-full overflow-hidden rounded-xl bg-muted">
+            <div className="aspect-square w-64 overflow-hidden rounded-2xl">
               <img
                 src={joshBrunschImg}
                 alt="Josh Brunsch"
