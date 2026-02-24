@@ -134,7 +134,7 @@ const integrationSections = [
       {
         icon: <ClayIcon />,
         name: "Clay",
-        badge: "Direct sync",
+        badge: "via API",
         badgeVariant: "direct" as const,
         description: "Automate data enrichment in Clay and build highly targeted, dynamic lead lists.",
       },
