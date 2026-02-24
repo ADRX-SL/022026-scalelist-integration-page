@@ -74,7 +74,7 @@ const Accuracy = () => {
           {/* Left - Data coverage */}
           <div className="rounded-2xl bg-white/5 p-8">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Data coverage</p>
-            <p className="mb-1 text-4xl font-extrabold text-white">up to<br />95%</p>
+            <p className="mb-1 text-4xl font-extrabold text-white">up to 95%</p>
             <p className="mb-8 text-sm text-gray-400">Verified emails + direct dials</p>
             <p className="mb-8 text-sm text-gray-400">
               See how we perform against competitors. <span className="inline-block">→</span>
