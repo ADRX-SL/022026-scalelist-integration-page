@@ -78,11 +78,11 @@ const Hero = () => {
                 Push enriched contacts straight into your CRM and outreach tools. Start sequences instantly.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <Button size="lg" className="gap-2 rounded-full px-8 text-base">
-                  Try for free <ArrowRight className="h-4 w-4" />
+                <Button size="lg" className="gap-2 rounded-full px-8 text-base" asChild>
+                  <a href="https://app.scalelist.com/auth/login?redirectUrl=%2Fapp%2Fdashboard">Try for free <ArrowRight className="h-4 w-4" /></a>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8 text-base">
-                  Talk to sales
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-base" asChild>
+                  <a href="https://form.typeform.com/to/lvQHcXGx?typeform-source=scalelist.com">Talk to sales</a>
                 </Button>
               </div>
             </div>
