@@ -1,15 +1,20 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-transparent-bg.png";
-
+import salesforceLogo from "@/assets/hero-salesforce.png";
+import clayLogo from "@/assets/hero-clay.png";
+import zapierLogo from "@/assets/hero-zapier.png";
+import attioLogo from "@/assets/hero-attio.png";
+import pipedriveLogo from "@/assets/hero-pipedrive.png";
+import csvLogo from "@/assets/hero-csv.png";
 
 const integrationLogos = [
-  { name: "salesforce", label: "salesforce", bg: "bg-sky-400", text: "text-white", angle: -60 },
-  { name: "clay", label: "clay 🌈", bg: "bg-white", text: "text-foreground", angle: -150 },
-  { name: "zapier", label: "zapier", bg: "bg-orange-500", text: "text-white", angle: 0 },
-  { name: "hubspot", label: "⚙", bg: "bg-white", text: "text-orange-500", angle: -210 },
-  { name: "mixpanel", label: "●", bg: "bg-white", text: "text-violet-600", angle: -30 },
-  { name: "csv", label: "CSV", bg: "bg-white", text: "text-green-600", angle: -270 },
+  { name: "salesforce", src: salesforceLogo, alt: "Salesforce", angle: -60, imageClassName: "h-9 w-12" },
+  { name: "clay", src: clayLogo, alt: "Clay", angle: -150, imageClassName: "h-10 w-14" },
+  { name: "zapier", src: zapierLogo, alt: "Zapier", angle: 0, imageClassName: "h-11 w-11" },
+  { name: "attio", src: attioLogo, alt: "Attio", angle: -210, imageClassName: "h-10 w-10" },
+  { name: "pipedrive", src: pipedriveLogo, alt: "Pipedrive", angle: -30, imageClassName: "h-10 w-10" },
+  { name: "csv", src: csvLogo, alt: "CSV", angle: -270, imageClassName: "h-10 w-10" },
 ];
 
 const OrbitDiagram = () => {
@@ -47,10 +52,8 @@ const OrbitDiagram = () => {
               transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
             }}
           >
-            <div
-              className={`flex h-14 w-14 items-center justify-center rounded-full ${item.bg} ${item.text} border border-border shadow-md text-xs font-bold`}
-            >
-              {item.label}
+            <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-border bg-background p-3 shadow-md md:h-20 md:w-20 md:p-3.5">
+              <img src={item.src} alt={item.alt} className={`${item.imageClassName} object-contain`} loading="lazy" />
             </div>
           </div>
         );
