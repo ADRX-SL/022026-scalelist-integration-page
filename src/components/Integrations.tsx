@@ -1,4 +1,13 @@
-import { Badge } from "@/components/ui/badge";
+import makeLogo from "@/assets/integration-make.jpg";
+import zapierLogo from "@/assets/integration-zapier.png";
+import n8nLogo from "@/assets/integration-n8n.png";
+import clayLogo from "@/assets/integration-clay.png";
+import hubspotLogo from "@/assets/integration-hubspot.png";
+import salesforceLogo from "@/assets/integration-salesforce.png";
+import pipedriveLogo from "@/assets/integration-pipedrive.png";
+import folkLogo from "@/assets/integration-folk.png";
+import attioLogo from "@/assets/integration-attio.png";
+import breakcoldLogo from "@/assets/integration-breakcold.png";
 
 interface IntegrationCard {
   icon: React.ReactNode;
@@ -22,69 +31,23 @@ const BadgeLabel = ({ type, label }: { type: string; label: string }) => {
   );
 };
 
-const MakeIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M4 8h6l4 12 4-12h6l4 12 4-12h6" stroke="hsl(258, 60%, 50%)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  </svg>
-);
-
-const ZapierIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M20 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z" fill="hsl(24, 95%, 53%)" />
-  </svg>
-);
-
-const N8nIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <circle cx="10" cy="20" r="4" stroke="hsl(10, 80%, 55%)" strokeWidth="2.5" fill="none" />
-    <circle cx="20" cy="20" r="4" stroke="hsl(10, 80%, 55%)" strokeWidth="2.5" fill="none" />
-    <circle cx="30" cy="20" r="4" stroke="hsl(10, 80%, 55%)" strokeWidth="2.5" fill="none" />
-    <line x1="14" y1="20" x2="16" y2="20" stroke="hsl(10, 80%, 55%)" strokeWidth="2" />
-    <line x1="24" y1="20" x2="26" y2="20" stroke="hsl(10, 80%, 55%)" strokeWidth="2" />
-  </svg>
-);
-
-const HubSpotIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M20 8c-2 0-4 1-5 3-2-1-4 0-5 2s0 4 2 5c-1 2 0 4 2 5s4 0 5-2c2 1 4 0 5-2s0-4-2-5c1-2 0-4-2-5s-3-1-5-1z" fill="hsl(18, 95%, 55%)" />
-  </svg>
-);
-
-const SalesforceIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <ellipse cx="14" cy="22" rx="8" ry="7" fill="hsl(200, 85%, 55%)" />
-    <ellipse cx="26" cy="22" rx="8" ry="7" fill="hsl(200, 85%, 55%)" />
-    <ellipse cx="20" cy="16" rx="7" ry="6" fill="hsl(200, 85%, 55%)" />
-  </svg>
-);
-
-const PipedriveIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <rect x="10" y="8" width="20" height="24" rx="6" fill="hsl(145, 55%, 42%)" />
-    <text x="20" y="25" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">p</text>
-  </svg>
-);
-
-const FolkIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <circle cx="20" cy="20" r="14" fill="hsl(0, 0%, 15%)" />
-    <ellipse cx="20" cy="20" rx="8" ry="5" stroke="white" strokeWidth="2" fill="none" />
-    <line x1="20" y1="15" x2="20" y2="25" stroke="white" strokeWidth="2" />
-  </svg>
-);
-
-const AttioIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M8 28L16 12h8l8 16" stroke="hsl(0, 0%, 15%)" strokeWidth="3" strokeLinecap="round" fill="none" />
-    <path d="M14 22h12" stroke="hsl(0, 0%, 15%)" strokeWidth="3" strokeLinecap="round" />
-  </svg>
-);
-
-const BreakcoldIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <rect x="8" y="8" width="24" height="24" rx="6" fill="hsl(222, 84%, 53%)" />
-    <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">Br</text>
-  </svg>
+const BrandIcon = ({
+  src,
+  alt,
+  imageClassName,
+}: {
+  src: string;
+  alt: string;
+  imageClassName?: string;
+}) => (
+  <div className="flex h-12 items-center">
+    <img
+      src={src}
+      alt={`${alt} logo`}
+      className={imageClassName ?? "h-10 w-auto max-w-[120px] object-contain"}
+      loading="lazy"
+    />
+  </div>
 );
 
 const GoogleSheetsIcon = () => (
@@ -97,42 +60,33 @@ const GoogleSheetsIcon = () => (
   </svg>
 );
 
-const ClayIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <text x="4" y="28" fontSize="22" fontWeight="bold" fill="hsl(0, 0%, 15%)">clay</text>
-    <rect x="32" y="10" width="6" height="12" rx="3" fill="hsl(340, 80%, 55%)" />
-    <rect x="30" y="14" width="4" height="8" rx="2" fill="hsl(40, 90%, 55%)" />
-    <rect x="34" y="14" width="4" height="8" rx="2" fill="hsl(200, 80%, 55%)" />
-  </svg>
-);
-
 const integrationSections = [
   {
     title: "Automation & No-code",
     cards: [
       {
-        icon: <MakeIcon />,
+        icon: <BrandIcon src={makeLogo} alt="Make" imageClassName="h-11 w-auto max-w-[132px] object-contain" />,
         name: "Make",
         badge: "Direct sync",
         badgeVariant: "direct" as const,
         description: "Find the right leads based on multiple filters. Send multichannel campaigns with Scalelist.",
       },
       {
-        icon: <ZapierIcon />,
+        icon: <BrandIcon src={zapierLogo} alt="Zapier" imageClassName="h-11 w-auto max-w-[112px] object-contain" />,
         name: "Zapier",
         badge: "Direct sync",
         badgeVariant: "direct" as const,
         description: "Use Zapier to connect Scalelist to 5,000+ tools you use in your business to increase your productivity.",
       },
       {
-        icon: <N8nIcon />,
+        icon: <BrandIcon src={n8nLogo} alt="n8n" imageClassName="h-11 w-auto max-w-[110px] object-contain" />,
         name: "n8n",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Use n8n to connect Scalelist and set up outreach automation. It's the most popular workflow automation platform.",
       },
       {
-        icon: <ClayIcon />,
+        icon: <BrandIcon src={clayLogo} alt="Clay" imageClassName="h-11 w-auto max-w-[120px] object-contain" />,
         name: "Clay",
         badge: "via API",
         badgeVariant: "direct" as const,
@@ -144,42 +98,42 @@ const integrationSections = [
     title: "CRM",
     cards: [
       {
-        icon: <HubSpotIcon />,
+        icon: <BrandIcon src={hubspotLogo} alt="HubSpot" imageClassName="h-10 w-10 object-contain" />,
         name: "HubSpot",
         badge: "2-way sync",
         badgeVariant: "twoway" as const,
         description: "Sync your outbound activities, like new leads, email interactions, etc., to HubSpot. Easily transfer leads between HubSpot and Scalelist.",
       },
       {
-        icon: <SalesforceIcon />,
+        icon: <BrandIcon src={salesforceLogo} alt="Salesforce" imageClassName="h-10 w-auto max-w-[124px] object-contain" />,
         name: "Salesforce",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Forward outbound activities (new leads, email opens, replies, etc.) to Salesforce. Easily transfer leads between Salesforce and Scalelist.",
       },
       {
-        icon: <PipedriveIcon />,
+        icon: <BrandIcon src={pipedriveLogo} alt="Pipedrive" imageClassName="h-10 w-auto max-w-[124px] object-contain" />,
         name: "Pipedrive",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Forward outbound activities (new leads, email opens, replies, etc.) to Pipedrive. Easily transfer leads between Pipedrive and Scalelist.",
       },
       {
-        icon: <FolkIcon />,
+        icon: <BrandIcon src={folkLogo} alt="folk" imageClassName="h-10 w-auto max-w-[118px] object-contain" />,
         name: "Folk",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Centralize your contacts and sync Scalelist enrichment data directly to your folk CRM.",
       },
       {
-        icon: <AttioIcon />,
+        icon: <BrandIcon src={attioLogo} alt="Attio" imageClassName="h-10 w-auto max-w-[118px] object-contain" />,
         name: "Attio",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Build powerful workflows by syncing Scalelist prospects into your Attio workspace.",
       },
       {
-        icon: <BreakcoldIcon />,
+        icon: <BrandIcon src={breakcoldLogo} alt="Breakcold" imageClassName="h-10 w-10 object-contain" />,
         name: "Breakcold",
         badge: "Coming soon",
         badgeVariant: "coming" as const,
