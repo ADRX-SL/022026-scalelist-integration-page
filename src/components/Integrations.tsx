@@ -36,13 +36,15 @@ const BrandIcon = ({
   src,
   alt,
   imageClassName,
+  wrapperClassName,
 }: {
   src: string;
   alt: string;
   imageClassName?: string;
+  wrapperClassName?: string;
 }) => (
   <div className="flex h-12 items-center">
-    <div className="flex h-12 w-12 items-center justify-center">
+    <div className={wrapperClassName ?? "flex h-12 w-12 items-center justify-center"}>
       <img
         src={src}
         alt={`${alt} logo`}
@@ -81,7 +83,7 @@ const integrationSections = [
         description: "Use n8n to connect Scalelist and set up outreach automation. It's the most popular workflow automation platform.",
       },
       {
-        icon: <BrandIcon src={clayLogo} alt="Clay" imageClassName="h-16 w-16 object-contain" />,
+        icon: <BrandIcon src={clayLogo} alt="Clay" imageClassName="h-16 w-16 object-contain" wrapperClassName="flex h-16 w-16 items-center justify-center" />,
         name: "Clay",
         badge: "via API",
         badgeVariant: "direct" as const,
