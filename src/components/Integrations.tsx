@@ -1,13 +1,14 @@
-import makeLogo from "@/assets/integration-make.jpg";
-import zapierLogo from "@/assets/integration-zapier.png";
-import n8nLogo from "@/assets/integration-n8n.png";
+import makeLogo from "@/assets/integration-make-icon.webp";
+import zapierLogo from "@/assets/integration-zapier-icon.svg";
+import n8nLogo from "@/assets/integration-n8n-icon.webp";
 import clayLogo from "@/assets/integration-clay.png";
-import hubspotLogo from "@/assets/integration-hubspot.png";
-import salesforceLogo from "@/assets/integration-salesforce.png";
-import pipedriveLogo from "@/assets/integration-pipedrive.png";
-import folkLogo from "@/assets/integration-folk.png";
-import attioLogo from "@/assets/integration-attio.png";
-import breakcoldLogo from "@/assets/integration-breakcold.png";
+import hubspotLogo from "@/assets/integration-hubspot-icon.webp";
+import salesforceLogo from "@/assets/integration-salesforce-icon.webp";
+import pipedriveLogo from "@/assets/integration-pipedrive-icon.webp";
+import folkLogo from "@/assets/integration-folk-icon.webp";
+import attioLogo from "@/assets/integration-attio-icon.png";
+import breakcoldLogo from "@/assets/integration-breakcold-icon.webp";
+import googleSheetsLogo from "@/assets/integration-google-sheets-icon.webp";
 
 interface IntegrationCard {
   icon: React.ReactNode;
@@ -41,24 +42,18 @@ const BrandIcon = ({
   imageClassName?: string;
 }) => (
   <div className="flex h-12 items-center">
-    <img
-      src={src}
-      alt={`${alt} logo`}
-      className={imageClassName ?? "h-10 w-auto max-w-[120px] object-contain"}
-      loading="lazy"
-    />
+    <div className="flex h-12 w-12 items-center justify-center">
+      <img
+        src={src}
+        alt={`${alt} logo`}
+        className={imageClassName ?? "h-10 w-10 object-contain"}
+        loading="lazy"
+      />
+    </div>
   </div>
 );
 
-const GoogleSheetsIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <rect x="8" y="4" width="24" height="32" rx="3" fill="hsl(145, 65%, 42%)" />
-    <rect x="12" y="12" width="16" height="3" rx="1" fill="white" />
-    <rect x="12" y="18" width="16" height="3" rx="1" fill="white" />
-    <rect x="12" y="24" width="16" height="3" rx="1" fill="white" />
-    <line x1="20" y1="12" x2="20" y2="27" stroke="hsl(145, 65%, 42%)" strokeWidth="1.5" />
-  </svg>
-);
+const GoogleSheetsIcon = () => <BrandIcon src={googleSheetsLogo} alt="Google Sheets" />;
 
 const integrationSections = [
   {
