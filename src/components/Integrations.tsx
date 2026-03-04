@@ -210,7 +210,7 @@ const IntegrationCard = ({ card }: { card: IntegrationCard }) => (
       <BadgeLabel type={card.badgeVariant} label={card.badge} />
     </div>
     <p className="text-sm text-muted-foreground leading-relaxed flex-1">{card.description}</p>
-    <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:underline mt-2">
+    <a href="https://app.scalelist.com/auth/login?redirectUrl=%2Fapp%2Fdashboard" className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:underline mt-2">
       Connect now <span aria-hidden="true">›</span>
     </a>
   </div>
