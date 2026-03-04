@@ -81,7 +81,7 @@ const integrationSections = [
         description: "Use n8n to connect Scalelist and set up outreach automation. It's the most popular workflow automation platform.",
       },
       {
-        icon: <BrandIcon src={clayLogo} alt="Clay" />,
+        icon: <BrandIcon src={clayLogo} alt="Clay" imageClassName="h-16 w-16 object-contain" />,
         name: "Clay",
         badge: "via API",
         badgeVariant: "direct" as const,
