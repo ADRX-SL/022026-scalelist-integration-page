@@ -9,6 +9,11 @@ import folkLogo from "@/assets/integration-folk-icon.webp";
 import attioLogo from "@/assets/integration-attio-icon.png";
 import breakcoldLogo from "@/assets/integration-breakcold-icon.webp";
 import googleSheetsLogo from "@/assets/integration-google-sheets-icon.webp";
+import lemlistLogo from "@/assets/integration-lemlist.png";
+import instantlyLogo from "@/assets/integration-instantly.png";
+import smartleadLogo from "@/assets/integration-smartlead.png";
+import woodpeckerLogo from "@/assets/integration-woodpecker.png";
+import saleshandyLogo from "@/assets/integration-saleshandy.png";
 
 interface IntegrationCard {
   icon: React.ReactNode;
