@@ -9,6 +9,11 @@ import folkLogo from "@/assets/integration-folk-icon.webp";
 import attioLogo from "@/assets/integration-attio-icon.png";
 import breakcoldLogo from "@/assets/integration-breakcold-icon.webp";
 import googleSheetsLogo from "@/assets/integration-google-sheets-icon.webp";
+import lemlistLogo from "@/assets/integration-lemlist.png";
+import instantlyLogo from "@/assets/integration-instantly.png";
+import smartleadLogo from "@/assets/integration-smartlead.png";
+import woodpeckerLogo from "@/assets/integration-woodpecker.png";
+import saleshandyLogo from "@/assets/integration-saleshandy.png";
 
 interface IntegrationCard {
   icon: React.ReactNode;
@@ -135,6 +140,46 @@ const integrationSections = [
         badge: "Coming soon",
         badgeVariant: "coming" as const,
         description: "Centralize social and email interactions, then sync key insights into Scalelist.",
+      },
+    ],
+  },
+  {
+    title: "Email Sequencer",
+    cards: [
+      {
+        icon: <BrandIcon src={lemlistLogo} alt="lemlist" />,
+        name: "lemlist",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Send enriched leads from Scalelist to lemlist and launch personalized multichannel outbound campaigns.",
+      },
+      {
+        icon: <BrandIcon src={instantlyLogo} alt="Instantly" />,
+        name: "Instantly",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Push Scalelist leads into Instantly and start email campaigns with verified contact data.",
+      },
+      {
+        icon: <BrandIcon src={smartleadLogo} alt="Smartlead" />,
+        name: "Smartlead",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Connect Scalelist with Smartlead to send enriched leads into your outbound campaigns.",
+      },
+      {
+        icon: <BrandIcon src={woodpeckerLogo} alt="Woodpecker" />,
+        name: "Woodpecker",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Sync Scalelist leads with Woodpecker and run cold email campaigns using fresh contact data.",
+      },
+      {
+        icon: <BrandIcon src={saleshandyLogo} alt="Saleshandy" />,
+        name: "Saleshandy",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Send Scalelist leads to Saleshandy and launch outbound sequences with verified emails.",
       },
     ],
   },
