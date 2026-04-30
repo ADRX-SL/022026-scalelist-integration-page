@@ -144,6 +144,46 @@ const integrationSections = [
     ],
   },
   {
+    title: "Email Sequencer",
+    cards: [
+      {
+        icon: <BrandIcon src={lemlistLogo} alt="lemlist" />,
+        name: "lemlist",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Send enriched leads from Scalelist to lemlist and launch personalized multichannel outbound campaigns.",
+      },
+      {
+        icon: <BrandIcon src={instantlyLogo} alt="Instantly" />,
+        name: "Instantly",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Push Scalelist leads into Instantly and start email campaigns with verified contact data.",
+      },
+      {
+        icon: <BrandIcon src={smartleadLogo} alt="Smartlead" />,
+        name: "Smartlead",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Connect Scalelist with Smartlead to send enriched leads into your outbound campaigns.",
+      },
+      {
+        icon: <BrandIcon src={woodpeckerLogo} alt="Woodpecker" />,
+        name: "Woodpecker",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Sync Scalelist leads with Woodpecker and run cold email campaigns using fresh contact data.",
+      },
+      {
+        icon: <BrandIcon src={saleshandyLogo} alt="Saleshandy" />,
+        name: "Saleshandy",
+        badge: "Direct sync",
+        badgeVariant: "direct" as const,
+        description: "Send Scalelist leads to Saleshandy and launch outbound sequences with verified emails.",
+      },
+    ],
+  },
+  {
     title: "Google Sheet Automation",
     cards: [
       {
