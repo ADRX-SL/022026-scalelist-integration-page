@@ -7,6 +7,8 @@ import zapierLogo from "@/assets/hero-zapier.png";
 import attioLogo from "@/assets/hero-attio.png";
 import pipedriveLogo from "@/assets/hero-pipedrive.png";
 import csvLogo from "@/assets/hero-csv.png";
+import lemlistLogo from "@/assets/hero-lemlist.png";
+import instantlyLogo from "@/assets/hero-instantly.png";
 
 const integrationLogos = [
   { name: "salesforce", src: salesforceLogo, alt: "Salesforce", angle: -60, imageClassName: "h-9 w-12" },
@@ -15,6 +17,8 @@ const integrationLogos = [
   { name: "attio", src: attioLogo, alt: "Attio", angle: -210, imageClassName: "h-10 w-10" },
   { name: "pipedrive", src: pipedriveLogo, alt: "Pipedrive", angle: -30, imageClassName: "h-10 w-10" },
   { name: "csv", src: csvLogo, alt: "CSV", angle: -270, imageClassName: "h-10 w-10" },
+  { name: "lemlist", src: lemlistLogo, alt: "lemlist", angle: -110, imageClassName: "h-10 w-10" },
+  { name: "instantly", src: instantlyLogo, alt: "Instantly", angle: 60, imageClassName: "h-10 w-10" },
 ];
 
 const OrbitDiagram = () => {
